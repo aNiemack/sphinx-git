@@ -2,7 +2,9 @@ FROM debian:latest
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   make \
-  git \
+  git-core \
+  git-svn \
+  ruby \
   python-pip \
   python-dev \
   texlive texlive-latex-recommended \
