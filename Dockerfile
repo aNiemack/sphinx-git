@@ -1,6 +1,6 @@
 FROM debian:latest
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y sudo curl git && \
   make \
   git-core \
   svn \
@@ -10,9 +10,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   python-dev \
   texlive texlive-latex-recommended \
   texlive-latex-extra \
-  texlive-fonts-recommended
-  apt-get update && \
-  apt-get install -y sudo curl git && \
+  texlive-fonts-recommended \
   curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
   sudo apt-get install git-lfs=1.0.0 && \
 
