@@ -15,7 +15,7 @@ RUN \
 apt-get update && \
 apt-get install -y sudo curl git && \
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
-sudo apt-get install git-lfs=1.0.0
+sudo apt-get install git-lfs
 
 RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme
 
