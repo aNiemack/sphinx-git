@@ -4,6 +4,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   make \
   git-core \
   git-svn \
+  subversion \
+  libapache2-mod-svn \
   ruby \
   python-pip \
   python-dev \
