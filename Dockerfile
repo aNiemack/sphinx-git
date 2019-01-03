@@ -23,6 +23,8 @@ RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme
 
 RUN pip install sphinx-fortran
 
+RUN pip install numpy
+
 CMD ["/bin/bash"]
 
 WORKDIR /doc
