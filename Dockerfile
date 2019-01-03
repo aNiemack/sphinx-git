@@ -21,6 +21,8 @@ sudo apt-get install git-lfs
 
 RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme 
 
+Run pip install docutils==0.12
+
 RUN pip install sphinx-fortran
 
 RUN pip install numpy
