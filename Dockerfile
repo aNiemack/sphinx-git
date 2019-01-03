@@ -19,9 +19,9 @@ apt-get install -y sudo curl git && \
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash && \
 sudo apt-get install git-lfs
 
-RUN pip install \
-Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme \
-sphinx-fortran \
+RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme 
+
+RUN pip install sphinx-fortran
 
 CMD ["/bin/bash"]
 
