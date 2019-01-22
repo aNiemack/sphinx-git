@@ -27,6 +27,8 @@ RUN pip install sphinx-fortran==1.0.1
 
 RUN pip install numpy
 
+RUN pip install recommonmark
+
 CMD ["/bin/bash"]
 
 WORKDIR /doc
