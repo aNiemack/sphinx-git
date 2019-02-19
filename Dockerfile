@@ -31,4 +31,6 @@ RUN pip install recommonmark
 
 CMD ["/bin/bash"]
 
-WORKDIR /doc
+WORKDIR /work
+
+ADD conversion.sh
