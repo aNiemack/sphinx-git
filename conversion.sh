@@ -13,7 +13,7 @@ git config --global credential.helper cache
 git config --global user.email "$EMAIL"
 git config --global user.name "$USER"
 
-git svn clone https://svn-dares-dart.cgd.ucar.edu/DART --no-metadata --revision $REVISION
+git svn clone https://svn-dares-dart.cgd.ucar.edu/DART --ignore-paths="^trunk" --no-metadata --revision "$REVISION:HEAD"
 cd DART
 
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch branches/nancy_new/models/bgrid_solo/work/obs_seq.in' --prune-empty --tag-name-filter cat -- --all
