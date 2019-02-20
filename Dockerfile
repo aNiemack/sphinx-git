@@ -19,6 +19,9 @@ CMD ["/bin/bash"]
 
 WORKDIR /work
 
-RUN git fetch https://github.com/aNiemack/sphinx-git 
-RUN git checkout origin/master -- conversion.sh 
+RUN git clone https://github.com/aNiemack/sphinx-git 
+RUN cd sphinx-git;
+    mv conversion.sh /work;
+    cd ..;
+    rm -r sphinx-git
 RUN chmod 0755 conversion.sh
