@@ -38,5 +38,6 @@ for element in "$@"; do
         git add --all
         git commit -m "from svn to github"
         git push --set-upstream  $REMOTE "${array[-1]}"
+        cd /work/DART
 
 done
