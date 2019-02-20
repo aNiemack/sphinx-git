@@ -19,6 +19,6 @@ CMD ["/bin/bash"]
 
 WORKDIR /work
 
-RUN git fetch https://github.com/aNiemack/sphinx-git ;
-  git checkout origin/master -- conversion.sh ;
-  chmod 0755 conversion.sh
+RUN git fetch https://github.com/aNiemack/sphinx-git 
+RUN git checkout origin/master -- conversion.sh 
+RUN chmod 0755 conversion.sh
