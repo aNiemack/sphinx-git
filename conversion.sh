@@ -28,14 +28,15 @@ git reflog expire --expire=now --all
 git gc --prune=now
 
 for element in "$@"; do
-
+        
+        IFS='/' read -ra array <<< "$element"
         cd $element
         git init
         git add --all
         git commit -m "initilize git"
-        git checkout -b $element
+        git checkout -b "${array[-1]}"
         git add --all
         git commit -m "from svn to github"
-        git push --set-upstream  $REMOTE $element
+        git push --set-upstream  $REMOTE "${array[-1]}"
 
 done
