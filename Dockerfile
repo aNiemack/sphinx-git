@@ -19,3 +19,6 @@ RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme 
 CMD ["/bin/bash"]
 
 WORKDIR /work
+
+RUN wget https://raw.githubusercontent.com/aNiemack/sphinx-git/master/conversion.sh
+RUN chmod 0755 conversion.sh
