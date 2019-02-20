@@ -7,7 +7,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   subversion \
   python-pip \
   python-dev \
-  wget
+  wget \
+  pandoc
 
 RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme \
   docutils==0.12 \
@@ -18,10 +19,3 @@ RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme 
 CMD ["/bin/bash"]
 
 WORKDIR /work
-
-RUN git clone https://github.com/aNiemack/sphinx-git 
-RUN cd sphinx-git
-RUN mv conversion.sh /work
-RUN cd ..
-RUN rm -r sphinx-git
-RUN chmod 0755 conversion.sh
