@@ -19,5 +19,5 @@ CMD ["/bin/bash"]
 
 WORKDIR /work
 
-RUN wget https://github.com/aNiemack/sphinx-git/conversion.sh
+RUN wget sphinx-git/conversion.sh
 RUN chmod 0755 conversion.sh
