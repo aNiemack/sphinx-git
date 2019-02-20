@@ -20,8 +20,8 @@ CMD ["/bin/bash"]
 WORKDIR /work
 
 RUN git clone https://github.com/aNiemack/sphinx-git 
-RUN cd sphinx-git;
-    mv conversion.sh /work;
-    cd ..;
-    rm -r sphinx-git
+RUN cd sphinx-git
+RUN mv conversion.sh /work
+RUN cd ..
+RUN rm -r sphinx-git
 RUN chmod 0755 conversion.sh
