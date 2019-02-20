@@ -19,5 +19,6 @@ CMD ["/bin/bash"]
 
 WORKDIR /work
 
-RUN wget sphinx-git/conversion.sh
-RUN chmod 0755 conversion.sh
+RUN git fetch ;
+  git checkout origin/master -- conversion.sh ;
+  chmod 0755 conversion.sh
