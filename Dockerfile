@@ -20,5 +20,3 @@ RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme 
 CMD ["/bin/bash"]
 
 WORKDIR /work
-
-RUN chmod 0755 conversion.sh
