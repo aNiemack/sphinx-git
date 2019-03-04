@@ -1,6 +1,6 @@
 FROM debian:latest
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update && apt-get upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   make \
   git-core \
   git-svn \
@@ -11,11 +11,11 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   vim \
   pandoc
 
-RUN pip install Sphinx==1.4.4 sphinx_rtd_theme alabaster sphinx_bootstrap_theme \
-  docutils==0.12 \
-  sphinx-fortran==1.0.1 \
-  numpy \
-  recommonmark
+RUN pip install sphinx
+
+RUN git clone https://github.com/VACUMM/sphinx-fortran.git
+  cd sphinx-fortran
+  python setup.py install
 
 CMD ["/bin/bash"]
 
