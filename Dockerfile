@@ -1,6 +1,6 @@
 FROM debian:latest
 
-RUN apt-get update && apt-get upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   make \
   git-core \
   git-svn \
@@ -13,9 +13,7 @@ RUN apt-get update && apt-get upgrade && DEBIAN_FRONTEND=noninteractive apt-get 
 
 RUN pip install sphinx
 
-RUN git clone https://github.com/VACUMM/sphinx-fortran.git
-  cd sphinx-fortran
-  python setup.py install
+RUN git clone https://github.com/VACUMM/sphinx-fortran.git && cd sphinx-fortran && python setup.py install
 
 CMD ["/bin/bash"]
 
