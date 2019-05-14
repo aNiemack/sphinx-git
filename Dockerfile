@@ -4,7 +4,7 @@ RUN yes | unminimize && \
     apt-get install -y man-db && \
     rm -r /var/lib/apt/lists/*
 
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
   make \
   git-core \
   git-svn \
@@ -20,8 +20,8 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && DEBIA
 
 RUN pip install ford
 
-RUN wget https://repo1.maven.org/maven2/com/madgag/bfg/1.13.0/bfg-1.13.0.jar
-
 CMD ["/bin/bash"]
 
 WORKDIR /work
+
+RUN wget https://repo1.maven.org/maven2/com/madgag/bfg/1.13.0/bfg-1.13.0.jar
