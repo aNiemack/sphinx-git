@@ -9,11 +9,14 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && DEBIA
   python-dev \
   wget \
   vim \
-  pandoc
+  pandoc \
+  graphviz \
+  default-jdk \
+  
 
-RUN pip install sphinx
+RUN pip install ford
 
-RUN git clone https://github.com/VACUMM/sphinx-fortran.git && cd sphinx-fortran && python setup.py install
+RUN wget https://repo1.maven.org/maven2/com/madgag/bfg/1.13.0/bfg-1.13.0.jar
 
 CMD ["/bin/bash"]
 
