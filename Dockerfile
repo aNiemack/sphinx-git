@@ -1,4 +1,8 @@
-FROM debian:latest
+FROM ubuntu:latest
+
+RUN yes | unminimize && \
+    apt-get install -y man-db && \
+    rm -r /var/lib/apt/lists/*
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive apt-get install -y \
   make \
@@ -11,7 +15,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && DEBIA
   vim \
   pandoc \
   graphviz \
-  default-jdk \
+  default-jdk 
   
 
 RUN pip install ford
